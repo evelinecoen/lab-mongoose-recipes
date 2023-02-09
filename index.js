@@ -18,6 +18,24 @@ const manageRecipes = async () => {
     // Before adding any recipes to the database, let's remove all existing ones
     await Recipe.deleteMany();
 
+    await Recipe.create ({title: "Pasta Bolognese", cuisine: "Italian"})
+    
+    // add the whole database of recipes  (iteration 3)
+    await Recipe.insertMany(data)
+
+
+    // update recipe (iteration 4)
+
+    await Recipe.updateOne({ title: 'Rigatoni alla Genovese' }, { duration: 100 });
+
+    //delete recipe (iteration 5)
+
+    await Recipe.deleteOne({ title: 'Carrot Cake' });
+    console.log (`Successfully deleted!`);
+
+    //close the database (it 6)
+
+    mongoose.disconnect();
     // Run your code here, after you have insured that the connection was made
   } catch (error) {
     console.log(error);
@@ -25,6 +43,22 @@ const manageRecipes = async () => {
 };
 
 manageRecipes();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Method 2: Using .then() method
 //If you want to use this method uncomment the code below:

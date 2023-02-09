@@ -15,6 +15,7 @@ const recipeSchema = new Schema({
     type: [ String ]
   },
   cuisine: {
+    required: true, 
     type: String
   },
   dishType: {
@@ -34,7 +35,7 @@ const recipeSchema = new Schema({
   },
   created: {
     type: Date,
-    default: "today"
+    default: Date.now()
   }
 });
 
